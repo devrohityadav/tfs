@@ -5,62 +5,36 @@ import { Card } from "@/components/ui/card";
 
 export const metadata = { title: "The Program — The Forest School" };
 
-const pillars = [
+const questions = [
+  {
+    title: "Indigenous Worldviews",
+    image: "/images/program/01.webp",
+    body: "How can living root bridges, forest ecosystems, and indigenous architecture teach us about resilience and sustainable design?",
+  },
   {
     title: "Ecological Symbiosis",
-    body: "Understanding interconnected life-systems through living root structures.",
+    image: "/images/program/02.webp",
+    body: "In what ways can village immersion, agroforestry, and shared community living show us how indigenous cultures sustain ecological balance?",
   },
   {
-    title: "Regenerative Design",
-    body: "Applying indigenous &lsquo;barefoot engineering&rsquo; to modern practices.",
+    title: "Reciprocity",
+    image: "/images/program/03.webp",
+    body: "How do foraging walks, ecological observation, and learning from a place help us move from extraction toward reciprocity with the natural world?",
   },
   {
-    title: "Sustainable Systems",
-    body: "Learning agroforestry, survival skills and crafts of the Khasi hills.",
+    title: "Regenerative Cultures",
+    image: "/images/program/04.webp",
+    body: "How can we bring together traditional arts, crafts, storytelling, and design to build truly regenerative communities?",
   },
   {
-    title: "Indigenous Wisdom",
-    body: "Direct engagement with guardians — their arts, plants, foraging & stories.",
+    title: "Deep Listening",
+    image: "/images/program/05.webp",
+    body: "What do survival skills, reflection, journaling, and deep listening teach us about what it means to truly belong to a place?",
   },
   {
-    title: "Relational Practice",
-    body: "Deep listening and structured reflection as the daily rhythm.",
-  },
-];
-
-const approach = [
-  ["Experiential Learning", "Learning by doing, not just observing."],
-  ["Indigenous Leadership", "Deeply rooted in the knowledge of the land."],
-  ["Relational Understanding", "Humans as integral parts of living systems."],
-  ["Embodied Knowledge", "Beyond purely cognitive, Eurocentric models."],
-  ["Co-learning & Co-creating", "Horizontal, non-hierarchical exchanges."],
-];
-
-const logistics = [
-  {
-    label: "Essential Gear",
-    items: [
-      "Sturdy, waterproof hiking boots with high-traction soles (mandatory).",
-      "Heavy-duty, breathable rain gear (poncho or jacket).",
-      "Analog waterproof notebooks and pens for regenerative-design sketching.",
-    ],
-  },
-  {
-    label: "Living Ethos & Facilities",
-    items: [
-      "Communal, minimalist, traditional accommodation in village homes.",
-      "Indian-style toilets in keeping with local infrastructure.",
-      "Digital minimalism — disconnect to reconnect with the language of place.",
-      "Biodegradable toiletries only, to protect local watersheds.",
-    ],
-  },
-  {
-    label: "Travel",
-    items: [
-      "Gateway: reach Shillong via Guwahati.",
-      "Group travel coordinated from Shillong to Pynursla (~3-hour journey).",
-      "Final sites: Nongjri Pungweikyian and Rangthylliang.",
-    ],
+    title: "Holistic Way of Living",
+    image: "/images/program/06.webp",
+    body: "How can our daily conversations around ecology and culture spark actionable paths toward co-existing with more-than-human beings?",
   },
 ];
 
@@ -69,10 +43,10 @@ export default function ProgramPage() {
     <div>
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <Image src="/images/program.webp" alt="" fill className="object-cover opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background" />
+          <Image src="/images/program.webp" alt="" fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
-        <div className="mx-auto max-w-5xl px-6 pb-20 pt-40">
+        <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
           <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
             The Program
           </div>
@@ -80,71 +54,94 @@ export default function ProgramPage() {
             Immersions of 5–20 days.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Modern education often feels disconnected from our ecological reality. We
-            address this gap for those seeking meaningful connections to the Earth and
-            grounded ways of living amid global uncertainty.
+            Short-term, immersive immersions into the heart of the hills — designed for
+            those seeking meaningful connection to the Earth and grounded ways of living
+            amid global uncertainty.
           </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="font-serif text-3xl md:text-4xl">Core pillars of immersion.</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p, i) => (
-            <Card key={p.title} className="border-border/50 bg-card/60 p-7">
-              <div className="mb-5 font-mono text-xs text-primary/70">0{i + 1}</div>
-              <h3 className="font-serif text-xl">{p.title}</h3>
-              <p
-                className="mt-3 text-sm leading-relaxed text-muted-foreground"
-                dangerouslySetInnerHTML={{ __html: p.body }}
-              />
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-border/40 bg-card/30">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1fr_2fr]">
-          <h2 className="font-serif text-3xl md:text-4xl">Our approach.</h2>
-          <ul className="divide-y divide-border/40">
-            {approach.map(([t, b]) => (
-              <li key={t} className="flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:gap-8">
-                <div className="w-56 shrink-0 font-serif text-xl">{t}</div>
-                <div className="text-muted-foreground">{b}</div>
-              </li>
-            ))}
-          </ul>
+          <blockquote className="mt-10 max-w-xl border-l-2 border-primary/60 pl-4 font-serif text-xl italic text-foreground/90">
+            &ldquo;I am because we are.&rdquo;
+          </blockquote>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-          Preparation & Logistics
+          Curriculum Framework
         </div>
-        <h2 className="font-serif text-3xl md:text-4xl">Arrive adaptable and respectful.</h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {logistics.map((g) => (
-            <Card key={g.label} className="border-border/50 bg-card/60 p-7">
-              <h3 className="font-serif text-lg">{g.label}</h3>
-              <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-                {g.items.map((it) => (
-                  <li key={it} className="flex gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary/70" />
-                    {it}
-                  </li>
-                ))}
-              </ul>
+        <h2 className="font-serif text-3xl md:text-4xl">
+          Six guiding questions.
+        </h2>
+        <p className="mt-4 max-w-2xl text-muted-foreground">
+          Profound inquiries that shape every immersion — explored through embodied
+          practice, dialogue with elders, and time on the land.
+        </p>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {questions.map((q, i) => (
+            <Card
+              key={q.title}
+              className="group gap-0 overflow-hidden p-0 transition-colors hover:border-primary/40"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={q.image}
+                  alt={q.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-3 font-mono text-xs text-primary/70">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 className="font-serif text-xl">{q.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {q.body}
+                </p>
+              </div>
             </Card>
           ))}
         </div>
-        <div className="mt-14 text-center">
-          <Link
-            href="/apply"
-            className={buttonVariants({ size: "lg", className: "rounded-full px-6" })}
-          >
-            Apply for the next cohort
-          </Link>
+      </section>
+
+      <section className="border-y border-border bg-muted/40">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1fr_2fr]">
+          <div>
+            <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+              Preparation
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Arrive adaptable and respectful.
+            </h2>
+          </div>
+          <div>
+            <p className="text-muted-foreground">
+              Meghalaya&rsquo;s terrain is breathtakingly beautiful, yet rugged and
+              demanding. Expect simple, communal accommodation; biodegradable toiletries
+              only; and digital minimalism so you can drop into the rhythms of the land.
+            </p>
+            <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+              <li>· Gateway: Shillong via Guwahati, then onward to Pynursla.</li>
+              <li>· Final sites: Nongjri Pungweikyian and Rangthylliang.</li>
+              <li>· Durations: 4–21 days, by cohort.</li>
+            </ul>
+            <Link
+              href="/preparation"
+              className="mt-8 inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80"
+            >
+              Full packing list &amp; daily rhythm →
+            </Link>
+          </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-24 text-center">
+        <Link
+          href="/apply"
+          className={buttonVariants({ size: "lg", className: "rounded-full px-6" })}
+        >
+          Apply for the next cohort
+        </Link>
       </section>
     </div>
   );

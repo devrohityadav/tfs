@@ -49,24 +49,22 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.18 0.02 140);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.18 0.02 140);
+  --primary: oklch(0.4 0.09 150);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.005 140);
+  --secondary-foreground: oklch(0.22 0.02 140);
+  --muted: oklch(0.97 0.005 140);
+  --muted-foreground: oklch(0.5 0.015 140);
+  --accent: oklch(0.96 0.01 140);
+  --accent-foreground: oklch(0.22 0.02 140);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.22 0.02 140 / 12%);
+  --input: oklch(0.22 0.02 140 / 18%);
+  --ring: oklch(0.4 0.09 150 / 55%);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -81,18 +79,20 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 140);
 }
 
 .dark {
-  --background: oklch(0.14 0.015 150);
-  --foreground: oklch(0.96 0.01 100);
-  --card: oklch(0.19 0.02 150);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.78 0.12 130);
-  --primary-foreground: oklch(0.15 0.02 150);
-  --secondary: oklch(0.27 0.03 150);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -127,4 +127,23 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Hero text overrides — outside @layer components so they win against
+   Tailwind utility classes that live in the utilities layer. */
+.hero-content :is(h1, h2, h3, p, blockquote) {
+  color: #fff;
+}
+.hero-content .text-muted-foreground {
+  color: rgb(255 255 255 / 0.85);
+}
+.hero-content .text-primary {
+  color: rgb(255 255 255 / 0.88);
+}
+.hero-content blockquote {
+  border-color: rgb(255 255 255 / 0.6);
+}
+.hero-content a[class*="bg-background"],
+.hero-content button[class*="bg-background"] {
+  color: var(--foreground);
 }

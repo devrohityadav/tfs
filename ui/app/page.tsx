@@ -1,28 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { PillarCarousel } from "@/components/pillar-carousel";
 
 const pillars = [
   {
-    title: "Ecological Symbiosis",
-    body: "Understanding interconnected life-systems through the living root structures of the Khasi hills.",
+    title: "A Living Systems Approach",
+    image: "/images/pillars/living-systems.webp",
+    body: "Adopt living-system thinking in your practice to design at the service of the regeneration of Earth's systems and communities.",
   },
   {
-    title: "Regenerative Design",
-    body: "Applying indigenous 'barefoot engineering' to contemporary practice and place-making.",
+    title: "Indigenous Knowledges",
+    image: "/images/pillars/indigenous-knowledges.webp",
+    body: "Deeply rooted in the ancient, localized currents of Khasi wisdom, where the land itself acts as the primary text.",
   },
   {
-    title: "Sustainable Systems",
-    body: "Agroforestry, foraging, survival skills and the traditional crafts of the land.",
+    title: "Embodied Knowledge",
+    image: "/images/pillars/embodied.webp",
+    body: "Moving past the cognitive, Eurocentric models of mind — knowledge produced by embodied subjects, expressed through songs, dances, art and oral traditions. We learn by doing, creating, and participating.",
   },
   {
-    title: "Indigenous Wisdom",
-    body: "Direct engagement with the guardians of the land — their arts, plant knowledge & storytelling.",
+    title: "Co-learning & Co-creating",
+    image: "/images/pillars/co-learning.webp",
+    body: "We learn in horizontal, non-hierarchical exchanges, honouring diverse ways of knowing — from scientific observation to ancestral storytelling. We open ourselves to multiple distinct realities and rich worldviews.",
   },
   {
-    title: "Relational Practice",
-    body: "Shifting from extraction to deep reciprocity through listening and structured reflection.",
+    title: "Relational Understanding",
+    image: "/images/pillars/relational.webp",
+    body: "Recognizing humans as integral parts of living systems and actively integrating a multi-species awareness into daily thought.",
+  },
+  {
+    title: "Deep Reciprocity",
+    image: "/images/pillars/reciprocity.webp",
+    body: "We do not come to simply consume the forest's beauty; we offer our energy, respect, and labour back to the communities whose hands sustain it.",
+  },
+  {
+    title: "Bioregionalism",
+    image: "/images/pillars/bioregionalism.webp",
+    body: "Our learning is anchored in the soil of the bioregion — focused on the natural, alive, and cultural features of a place defined by its pulsing watersheds and ecosystems, rather than the cold, straight lines of man-made borders.",
   },
 ];
 
@@ -45,20 +60,21 @@ export default function Home() {
             alt="The forests of Meghalaya"
             fill
             priority
-            className="object-cover opacity-60"
+            sizes="100vw"
+            quality={90}
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
-        <div className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-6 pb-20 pt-32">
+        <div className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-6 pb-20 pt-32 hero-content">
           <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-            Meghalaya · 2024 Cohort
+            Meghalaya · Inaugural Cohort
           </div>
           <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] tracking-tight md:text-7xl">
-            Welcome to <span className="italic text-primary">Forest School</span>
+            Welcome to <span className="italic text-primary">The Forest School</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
-            Learning to belong to the living Earth — an immersive, forest-based program
-            bridging modern education with indigenous wisdom.
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            A regenerative learning experience rooted in nature &amp; indigenous knowledge.
           </p>
           <blockquote className="mt-8 max-w-xl border-l-2 border-primary/60 pl-4 font-serif text-base italic text-foreground/90">
             &ldquo;We do not inherit the Earth. We learn to belong to it.&rdquo;
@@ -68,87 +84,61 @@ export default function Home() {
               href="/apply"
               className={buttonVariants({ size: "lg", className: "rounded-full px-6" })}
             >
-              Apply for Meghalaya 2024
+              Apply now
             </Link>
             <Link
-              href="/roots"
+              href="/vision"
               className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-6" })}
             >
-              Explore the Vision
+              Explore the vision
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-border/40 bg-card/40">
+      <section className="border-y border-border bg-muted/50">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
           <div className="mb-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Our Mission
+            The Invitation
           </div>
           <p className="font-serif text-2xl leading-relaxed md:text-3xl">
-            To cultivate a transformative learning ecosystem that bridges the gap between
-            modern education and indigenous wisdom. By dismantling the industrial
-            <span className="italic"> &lsquo;factory model&rsquo; </span>
-            and honoring the
-            <span className="italic"> &lsquo;language of place&rsquo;</span>, we foster
-            ecological healing through immersive, forest-based learning — grounded in
-            regenerative design, reciprocity, and relational balance with the living
-            Earth.
+            The Forest School offers an immersive, forest-based learning program that
+            bridges the gap between modern education and indigenous wisdom. This is a
+            gathering place for those ready to go beyond the sustainability discourse and
+            cultivate a reciprocal, regenerative practice in a more-than-human world.
+          </p>
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+            Our inaugural journey unfolds across the ancient, mist-shrouded landscapes of
+            Meghalaya, where the living architecture of the Khasi people offers a physical
+            blueprint for our shared future.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex items-end justify-between gap-8">
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-12">
+        <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-              Core Pillars
+              Why choose this course
             </div>
             <h2 className="font-serif text-4xl tracking-tight md:text-5xl">
-              Five immersions, one living curriculum.
+              Seven pillars, one living curriculum.
             </h2>
+            <p className="mt-4 max-w-xl text-sm text-muted-foreground">
+              Hover a card to read its essence, or click for the full story.
+            </p>
           </div>
           <Link
             href="/program"
-            className="hidden text-sm text-muted-foreground hover:text-foreground md:block"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             View the program →
           </Link>
         </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p, i) => (
-            <Card
-              key={p.title}
-              className="group relative overflow-hidden border-border/50 bg-card/60 p-7 transition-colors hover:border-primary/40"
-            >
-              <div className="mb-6 font-mono text-xs text-primary/70">
-                0{i + 1}
-              </div>
-              <h3 className="font-serif text-xl">{p.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {p.body}
-              </p>
-            </Card>
-          ))}
-          <Card className="flex flex-col justify-between overflow-hidden border-primary/30 bg-primary/5 p-7">
-            <div>
-              <div className="mb-6 font-mono text-xs text-primary/80">→</div>
-              <h3 className="font-serif text-xl">Co-learn with us</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                5–20 day immersions in the village landscapes of Pynursla.
-              </p>
-            </div>
-            <Link
-              href="/program"
-              className="mt-8 inline-flex items-center gap-2 text-sm text-primary"
-            >
-              See methodology →
-            </Link>
-          </Card>
-        </div>
+        <PillarCarousel pillars={pillars} />
       </section>
 
-      <section className="border-t border-border/40 bg-card/30">
+      <section className="border-t border-border bg-muted/40">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
             Field Notes
@@ -181,15 +171,17 @@ export default function Home() {
             src="/images/apply.webp"
             alt=""
             fill
-            className="object-cover opacity-40"
+            sizes="100vw"
+            quality={90}
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background to-background/40" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
-        <div className="mx-auto max-w-3xl px-6 py-28 text-center">
+        <div className="mx-auto max-w-3xl px-6 py-28 text-center text-white">
           <h2 className="font-serif text-4xl tracking-tight md:text-5xl">
-            Join the Meghalaya 2024 cohort.
+            Join the inaugural cohort.
           </h2>
-          <p className="mt-5 text-muted-foreground">
+          <p className="mt-5 text-white/80">
             A small, intentional group of students, artists, designers, researchers and
             practitioners co-learning in the forests of Pynursla.
           </p>
