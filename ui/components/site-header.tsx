@@ -3,10 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { buttonVariants } from "@/components/ui/button";
 
-const nav = [
+const homeNav = [
   { href: "/vision", label: "Vision" },
+  { href: "/program", label: "The Program" },
+  { href: "/team", label: "Team" },
+  { href: "/knowledge", label: "Knowledge Hub" },
+  { href: "/preparation", label: "Preparation" },
+];
+
+const innerNav = [
+  { href: "/", label: "Home" },
   { href: "/program", label: "The Program" },
   { href: "/team", label: "Team" },
   { href: "/knowledge", label: "Knowledge Hub" },
@@ -16,7 +23,9 @@ const nav = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const onApply = pathname?.startsWith("/apply");
+  const isHome = pathname === "/";
+  const nav = isHome ? homeNav : innerNav;
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
@@ -60,20 +69,6 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <Link
-          href="/apply"
-          aria-hidden={onApply || undefined}
-          tabIndex={onApply ? -1 : undefined}
-          className={buttonVariants({
-            variant: "outline",
-            size: "sm",
-            className: `rounded-full border-primary/40 bg-primary/10 text-xs uppercase tracking-[0.15em] text-primary hover:bg-primary/20 hover:text-primary${
-              onApply ? " invisible" : ""
-            }`,
-          })}
-        >
-          Apply Now
-        </Link>
       </div>
     </header>
   );

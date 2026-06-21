@@ -15,27 +15,37 @@ const essays = [
     title: "The Entropic Forest: Sharing Life, Ecopolitics, and Reciprocity",
     publisher: "Heinrich Böll Stiftung",
     note: "A study on ecopolitics and reciprocity in Northeast India.",
-    href: "https://in.boell.org/",
+    href: "https://in.boell.org/en/2020/10/10/entropic-forest-2020",
   },
   {
     title: "Pushing Boundaries",
     publisher: "The Telegraph India",
     note: "A feature on the global impact of her work at the Venice Biennale.",
-    href: "https://www.telegraphindia.com/",
+    href: "https://www.telegraphindia.com/culture/pushing-boundaries/cid/379184#goog_rewarded",
   },
   {
     title: "Inner Lines — Exhibition Details",
     publisher: "Exhibition Archive",
     note: "Documentation of river sovereignty and deep listening projects.",
-    href: "https://www.desiremachinecollective.in",
+    href: "https://www.artrabbit.com/events/inner-lines",
   },
 ];
 
 const projects = [
   {
+    title: "Panel at the SOIL ASSEMBLY — Kochi-Muziris Biennale 2026",
+    note: "Hydro Soils: From Land to Sea — THE SHAPE OF WATER by Sonal Jain (@ 1:16:20)",
+    href: "https://www.youtube.com/watch?v=A6wdrXfb8TM",
+  },
+  {
     title: "Desire Machine Collective",
     note: "Detailed conversation on the collective's artistic trajectory and political context.",
-    href: "https://www.desiremachinecollective.in",
+    href: "https://ocula.com/magazine/conversations/desire-machine-collective/",
+  },
+  {
+    title: "Desire Machine Collective — Wikipedia",
+    note: "General overview of the collective's history since 2004.",
+    href: "https://en.wikipedia.org/wiki/Desire_Machine_Collective",
   },
   {
     title: "deSchool — Alternative Worldviews, NE India",
@@ -45,12 +55,42 @@ const projects = [
   {
     title: "A Conversation with Desire Machine Collective",
     note: "AAA in-depth interview on the centre–periphery divide and the experience of time.",
-    href: "https://aaa.org.hk/",
+    href: "https://www.aaa-a.org/programs/a-conversation-with-desire-machine-collective",
   },
   {
-    title: "Desire Machine Collective — Wikipedia",
-    note: "General overview of the collective's history since 2004.",
-    href: "https://en.wikipedia.org/wiki/Desire_Machine_Collective",
+    title: "Artist Talk at Guggenheim Museum with Desire Machine Collective",
+    note: "Talk at the Solomon R. Guggenheim Museum, New York.",
+    href: "https://www.youtube.com/watch?v=iSeUVzCfue0&t=470s",
+  },
+  {
+    title: "Desiring Machine by Sandhini Poddar",
+    note: "Critical Collective essay on the work and practice of Desire Machine Collective.",
+    href: "https://criticalcollective.in/ArtistInner2.aspx?Aid=215&Eid=306",
+  },
+  {
+    title: "Noise Life — basis e.V. Frankfurt, Germany, 2015",
+    note: "Production and exhibition platform residency.",
+    href: "http://basis-frankfurt.de/de/newsletter/last-week-desire-machine-collective-noise-life",
+  },
+  {
+    title: "Everyone Agrees: It's About To Explode — India Pavilion, 54th Venice Biennale",
+    note: "Ranjit Hoskote, 2014.",
+    href: "http://www.india-seminar.com/2014/659/659_ranjit_hoskote.",
+  },
+  {
+    title: "Talk — Artist Portfolio, Desire Machine Collective",
+    note: "Extended artist portfolio talk.",
+    href: "https://www.youtube.com/watch?v=cj03THrMsxE&list=PL1YCmssARJBN0Q2wipkLrv296H4G_FtQ_&index=2&t=6s",
+  },
+  {
+    title: "PERIFERRY Residency — Video 1",
+    note: "Artist residency on a ferry barge on the Brahmaputra river.",
+    href: "https://www.youtube.com/watch?v=heDZqHZNOyE&t=8s",
+  },
+  {
+    title: "PERIFERRY Residency — Video 2",
+    note: "Continued documentation of the Periferry residency space.",
+    href: "https://www.youtube.com/watch?v=frU16jStcFU",
   },
 ];
 
@@ -110,7 +150,7 @@ export default function KnowledgePage() {
     <div>
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <Image src="/images/knowledge.webp" alt="" fill className="object-cover" priority />
+          <Image src="/images/knowledge.webp" alt="" fill className="object-cover object-top" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
@@ -120,7 +160,7 @@ export default function KnowledgePage() {
           <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl">
             Knowledge Hub
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
             An intellectual and archival foundation bridging contemporary research with
             ancient wisdom, under the leadership of Sonal Jain — with bio-architectural
             studies curated by Morningstar Khongthaw.
@@ -137,7 +177,7 @@ export default function KnowledgePage() {
                   Essay
                 </Badge>
                 <h3 className="font-serif text-xl leading-tight">{e.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{e.note}</p>
+                <p className="mt-3 text-base text-muted-foreground">{e.note}</p>
                 <div className="mt-6 text-xs uppercase tracking-[0.2em] text-primary">
                   {e.publisher} ↗
                 </div>
@@ -156,7 +196,7 @@ export default function KnowledgePage() {
                   Project
                 </Badge>
                 <h3 className="font-serif text-lg leading-tight">{p.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{p.note}</p>
+                <p className="mt-3 text-base text-muted-foreground">{p.note}</p>
                 <div className="mt-6 text-xs uppercase tracking-[0.2em] text-primary">
                   Visit ↗
                 </div>
@@ -183,7 +223,7 @@ export default function KnowledgePage() {
                 </span>
               </div>
               <h3 className="mt-4 font-serif text-lg leading-tight">{p.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground">{p.note}</p>
+              <p className="mt-3 text-base text-muted-foreground">{p.note}</p>
             </Card>
           ))}
         </div>
@@ -198,7 +238,7 @@ export default function KnowledgePage() {
           {bioArchitecture.map((b) => (
             <Card key={b.title} className="border-border bg-card p-7">
               <h3 className="font-serif text-lg">{b.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.body}</p>
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">{b.body}</p>
             </Card>
           ))}
         </div>

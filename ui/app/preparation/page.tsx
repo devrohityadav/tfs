@@ -90,9 +90,9 @@ export default function PreparationPage() {
             What to Expect & Preparation
           </div>
           <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] md:text-7xl">
-            Your journey into the forest.
+            Your journey into the forest
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
             Stepping into The Forest School is an invitation to leave &lsquo;clock time&rsquo;
             behind and drop into the older, slower rhythms of the natural world. Here is a
             glimpse of the sensory, immersive experience awaiting you in the hills of
@@ -103,7 +103,7 @@ export default function PreparationPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10 flex items-end justify-between gap-6">
-          <h2 className="font-serif text-3xl md:text-4xl">The daily rhythm.</h2>
+          <h2 className="font-serif text-3xl md:text-4xl">The daily rhythm</h2>
           <p className="hidden max-w-sm text-sm text-muted-foreground md:block">
             Balanced active learning with quiet reflection.
           </p>
@@ -114,7 +114,7 @@ export default function PreparationPage() {
               <div className="font-mono text-xs uppercase tracking-[0.18em] text-primary">
                 {r.time}
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                 {r.body}
               </p>
             </Card>
@@ -123,7 +123,7 @@ export default function PreparationPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
-        <h2 className="mb-8 font-serif text-3xl md:text-4xl">Living & accommodations.</h2>
+        <h2 className="mb-8 font-serif text-3xl md:text-4xl">Living & accommodations</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {living.map((l) => (
             <Card key={l.title} className="p-6">
@@ -155,7 +155,7 @@ export default function PreparationPage() {
             Preparation
           </div>
           <h2 className="font-serif text-3xl md:text-4xl">
-            Packing for the East Khasi Hills.
+            Packing for the East Khasi Hills
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
             The terrain is beautiful but demanding, especially during the monsoon. Pack
@@ -166,13 +166,10 @@ export default function PreparationPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {packing.map((p) => (
             <Card key={p.title} className="p-6">
-              <div className="flex items-baseline gap-3">
-                <span className="font-mono text-xs text-primary">{p.label}</span>
-                <h3 className="font-serif text-xl">{p.title}</h3>
-              </div>
+              <h3 className="font-serif text-xl">{p.title}</h3>
               <ul className="mt-4">
                 {p.items.map(([k, v], idx) => (
-                  <li key={k} className="text-sm">
+                  <li key={k} className="text-base">
                     {idx > 0 && <Separator className="my-3" />}
                     <span className="font-medium text-foreground">{k}.</span>{" "}
                     <span className="text-muted-foreground">{v}</span>
@@ -182,7 +179,7 @@ export default function PreparationPage() {
             </Card>
           ))}
         </div>
-        <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-10 max-w-2xl text-base leading-relaxed text-muted-foreground">
           Beyond physical gear, we ask that you bring an open mind and a spirit of
           receptivity. The Forest School is an immersive experience where the most
           important &lsquo;tool&rsquo; you carry is your willingness to engage with the

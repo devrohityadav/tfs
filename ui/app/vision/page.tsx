@@ -14,10 +14,10 @@ export default function VisionPage() {
           <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
             Our Vision
           </div>
-          <h1 className="max-w-3xl font-serif text-4xl leading-[1.1] md:text-6xl">
+          <h1 className="max-w-3xl font-serif text-5xl leading-[1.1] md:text-7xl">
             We do not inherit the Earth. We learn to belong to it.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
             Grounded in &lsquo;listening to land&rsquo;, The Forest School guides a shift from
             extraction to deep reciprocity with the ground beneath our feet.
           </p>
@@ -30,14 +30,14 @@ export default function VisionPage() {
           and an urgent biodiversity emergency, merely surviving or &lsquo;sustaining&rsquo;
           is no longer enough.
         </p>
-        <p className="text-base leading-relaxed text-muted-foreground">
+        <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
           We are responding to a profound collective call to outgrow the old, cold belief
           system that views the living Earth as a mere resource to be exploited. Our vision
           is to co-create regenerative cultures, to restore biodiversity, heal the climate,
           and empower local communities. We practice a multi-species way of being, where
           human and non-human species co-habit holistically.
         </p>
-        <p className="text-base leading-relaxed text-muted-foreground">
+        <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
           This is a transformative learning ecosystem designed to help you reconnect with
           nature, listen to the ancestral knowledge systems that have kept these forests
           alive for centuries, and remember how to navigate the delicate, relational
