@@ -2,23 +2,27 @@ import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-export const metadata = { title: "Preparation — The Forest School" };
+export const metadata = { title: "Preparation — Ecologies Studio" };
 
 const rhythm = [
   {
     time: "Morning",
+    image: "/images/gallery1.webp",
     body: "Grounding & Movement — communal circles, shared reflections, or quiet, mindful walks through the morning mist.",
   },
   {
     time: "Mid-day",
+    image: "/images/gallery2.webp",
     body: "Hands-on Immersion — losing ourselves in tactile learning, from the art of bamboo building to sitting at the base of living root bridges.",
   },
   {
     time: "Afternoon",
+    image: "/images/gallery3.webp",
     body: "Skill-Sharing & Discovery — time spent foraging along forest paths, learning traditional arts, or practicing basic survival skills.",
   },
   {
     time: "Evening",
+    image: "/images/gallery4.webp",
     body: "Storytelling & Connection — gathering close around the warmth of the fire for oral traditions, cooperative cooking, and shared, slow meals.",
   },
 ];
@@ -26,14 +30,17 @@ const rhythm = [
 const living = [
   {
     title: "Home-Stays",
+    image: "/images/gallery5.webp",
     body: "Sleeping in traditional village dwellings or shared community camps designed to leave a minimal, gentle footprint on the earth.",
   },
   {
     title: "Communal Living",
+    image: "/images/gallery6.webp",
     body: "Sharing the daily responsibilities of meals, firewood, and site care, breathing life into the truth of &lsquo;I am because we are.&rsquo;",
   },
   {
     title: "Digital Detox",
+    image: "/images/preparation-content/07.webp",
     body: "Stepping away from screens and limited connectivity to invite deep listening, sensory awareness, and genuine presence.",
   },
 ];
@@ -81,8 +88,8 @@ export default function PreparationPage() {
   return (
     <div>
       <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image src="/images/preparation/01.webp" alt="" fill className="object-cover" priority />
+        <div className="absolute inset-0 -z-10 bg-black">
+          <Image src="/images/preparation/01.webp" alt="" fill className="object-contain md:object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
@@ -93,7 +100,7 @@ export default function PreparationPage() {
             Your journey into the forest
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
-            Stepping into The Forest School is an invitation to leave &lsquo;clock time&rsquo;
+            Stepping into Ecologies Studio is an invitation to leave &lsquo;clock time&rsquo;
             behind and drop into the older, slower rhythms of the natural world. Here is a
             glimpse of the sensory, immersive experience awaiting you in the hills of
             Meghalaya.
@@ -110,13 +117,24 @@ export default function PreparationPage() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {rhythm.map((r) => (
-            <Card key={r.time} className="p-6">
-              <div className="font-mono text-xs uppercase tracking-[0.18em] text-primary">
-                {r.time}
+            <Card key={r.time} className="group gap-0 overflow-hidden p-0 transition-colors hover:border-primary/40">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={r.image}
+                  alt={r.time}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
-              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                {r.body}
-              </p>
+              <div className="p-6">
+                <div className="font-mono text-xs uppercase tracking-[0.18em] text-primary">
+                  {r.time}
+                </div>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  {r.body}
+                </p>
+              </div>
             </Card>
           ))}
         </div>
@@ -126,12 +144,23 @@ export default function PreparationPage() {
         <h2 className="mb-8 font-serif text-3xl md:text-4xl">Living & accommodations</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {living.map((l) => (
-            <Card key={l.title} className="p-6">
-              <div className="font-serif text-xl">{l.title}</div>
-              <p
-                className="mt-3 text-sm leading-relaxed text-muted-foreground"
-                dangerouslySetInnerHTML={{ __html: l.body }}
-              />
+            <Card key={l.title} className="group gap-0 overflow-hidden p-0 transition-colors hover:border-primary/40">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={l.image}
+                  alt={l.title}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="font-serif text-xl">{l.title}</div>
+                <p
+                  className="mt-3 text-sm leading-relaxed text-muted-foreground"
+                  dangerouslySetInnerHTML={{ __html: l.body }}
+                />
+              </div>
             </Card>
           ))}
         </div>
@@ -181,7 +210,7 @@ export default function PreparationPage() {
         </div>
         <p className="mt-10 max-w-2xl text-base leading-relaxed text-muted-foreground">
           Beyond physical gear, we ask that you bring an open mind and a spirit of
-          receptivity. The Forest School is an immersive experience where the most
+          receptivity. Ecologies Studio is an immersive experience where the most
           important &lsquo;tool&rsquo; you carry is your willingness to engage with the
           language of place.
         </p>

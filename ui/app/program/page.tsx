@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
+import { DelveDeeperDialog } from "@/components/delve-deeper-dialog";
 
-export const metadata = { title: "The Program — The Forest School" };
+export const metadata = { title: "The Program — Ecologies Studio" };
 
 const questions = [
   {
@@ -40,28 +41,25 @@ export default function ProgramPage() {
   return (
     <div>
       <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image src="/images/program.webp" alt="" fill className="object-cover object-top" priority />
+        <div className="absolute inset-0 -z-10 bg-black">
+          <Image src="/images/program.webp" alt="" fill className="object-contain md:object-cover md:object-top" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
-          <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-            The Program
-          </div>
           <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl">
-            We offer short-term immersions, 5–20 days into the heart of the hills.
+            We offer short-term immersions, 5–20 days into villages and natural ecosystems.
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
             Designed for those seeking meaningful connection to the Earth and grounded
             ways of living amid global uncertainty.
           </p>
-          <blockquote className="mt-10 max-w-xl border-l-2 border-primary/60 pl-4 font-serif text-xl italic text-foreground/90">
-            &ldquo;I am because we are.&rdquo;
-          </blockquote>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
+        <blockquote className="mx-auto max-w-xl border-l-2 border-primary/60 pl-4 font-serif text-xl italic text-foreground/90">
+          &ldquo;I am because we are.&rdquo;
+        </blockquote>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {questions.map((q) => (
             <Card
@@ -87,12 +85,7 @@ export default function ProgramPage() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a
-            href="/preparation"
-            className="inline-flex items-center justify-center rounded-full border border-primary/50 px-8 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
-          >
-            Delve Deeper
-          </a>
+          <DelveDeeperDialog questions={questions.map((q) => q.body)} />
         </div>
       </section>
     </div>

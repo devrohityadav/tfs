@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, Geist_Mono, Fraunces } from "next/font/google";
+import { Work_Sans, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-const sourceSans = Source_Sans_3({
+const sourceSans = Work_Sans({
   variable: "--font-source-sans",
   subsets: ["latin"],
   weight: ["300", "400", "600"],
@@ -21,7 +21,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "The Forest School — Learning to Belong to the Living Earth",
+  title: "Ecologies Studio — Learning to Belong to the Living Earth",
   description:
     "An immersive, forest-based learning program in Meghalaya bridging modern education and indigenous wisdom.",
 };

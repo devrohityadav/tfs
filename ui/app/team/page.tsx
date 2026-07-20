@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ExpandableProfile } from "@/components/expandable-profile";
 
-export const metadata = { title: "Team — The Forest School" };
+export const metadata = { title: "Team — Ecologies Studio" };
 
 const team = [
   {
@@ -62,7 +62,7 @@ const team = [
   },
   {
     name: "Muthok Khongmawloh",
-    role: "Community Leader, Meghalaya Cohort",
+    role: "Community Leader",
     image: "/images/muthok.webp",
     expandLabel: "View Educational Philosophy & Background",
     intro:
@@ -75,7 +75,7 @@ const team = [
   },
   {
     name: "Morningstar Khongthaw",
-    role: "Lead Conservationist · Chairman, KKLLK Heritage Committee",
+    role: "Lead Conservationist, Meghalaya Cohort",
     image: "/images/morningstar.webp",
     expandLabel: "View Educational Philosophy & Background",
     intro:
@@ -85,15 +85,21 @@ const team = [
         {
           heading: "Major Initiatives",
           items: [
-            "Living Bridge Foundation — founded in 2018 to repair ancient structures and guide the growth of new bridges.",
             "Living Architecture — using traditional techniques to grow ladders, swings, and seating platforms that strengthen over centuries.",
-            "Project 2047 — a vision to plant and nurture 30 new root bridges across Meghalaya by India's 100th year of independence.",
+            {
+              text: "Defining 'Living Architecture'",
+              href: "https://factordaily.com/the-man-who-grows-bridges-from-roots/",
+            },
           ],
         },
         {
           heading: "Advocacy & Recognition",
           items: [
             "Key role in the nomination of Meghalaya's living root bridges for UNESCO World Heritage status.",
+            {
+              text: "UNESCO World Heritage Advocacy",
+              href: "https://www.undp.org/india/stories/conserving-living-root-bridges-meghalaya",
+            },
             "Hosted the Union Minister of DoNER in 2025 to spotlight these engineering marvels.",
             "Honoured at the 11th Balipara Foundation Awards for his unwavering commitment to indigenous heritage and ecological stewardship.",
           ],
@@ -107,14 +113,11 @@ export default function TeamPage() {
   return (
     <div>
       <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image src="/images/team.webp" alt="" fill className="object-cover object-top" priority />
+        <div className="absolute inset-0 -z-10 bg-black">
+          <Image src="/images/team.webp" alt="" fill className="object-contain md:object-cover md:object-top" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
-          <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-            Meet the Team
-          </div>
           <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl">
             The Guardians &amp; Guides
           </h1>
@@ -127,7 +130,14 @@ export default function TeamPage() {
 
       <section className="mx-auto max-w-5xl space-y-28 px-6 py-24">
         {team.map((m) => (
-          <ExpandableProfile key={m.name} {...m} />
+          <div key={m.name}>
+            {m.name === "Muthok Khongmawloh" && (
+              <h2 className="mb-10 font-serif text-3xl md:text-4xl">
+                Team for Meghalaya Cohort
+              </h2>
+            )}
+            <ExpandableProfile {...m} />
+          </div>
         ))}
       </section>
     </div>

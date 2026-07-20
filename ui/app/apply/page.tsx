@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { ApplyForm } from "./apply-form";
 
-export const metadata = { title: "Apply — The Forest School" };
+export const metadata = { title: "Apply — Ecologies Studio" };
 
 const logistics = [
   ["Location", "Pynursla, East Khasi Hills, Meghalaya"],
@@ -22,14 +22,11 @@ export default function ApplyPage() {
   return (
     <div>
       <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image src="/images/apply.webp" alt="" fill className="object-cover" priority />
+        <div className="absolute inset-0 -z-10 bg-black">
+          <Image src="/images/apply.webp" alt="" fill className="object-contain md:object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
-          <div className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-            The Gateway
-          </div>
           <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl">
             Join the inaugural cohort.
           </h1>
@@ -66,10 +63,10 @@ export default function ApplyPage() {
             Beyond the Program
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Graduates of The Forest School do not simply leave; they become permanent
+            Graduates of Ecologies Studio do not simply leave; they become permanent
             threads in a growing network of practitioners. You will retain continued
             access to the Knowledge Hub and find ongoing opportunities to contribute your
-            hands to Project 2047 and co-create the future breaths of The Forest School.
+            hands to Project 2047 and co-create the future breaths of Ecologies Studio.
           </p>
         </Card>
       </section>

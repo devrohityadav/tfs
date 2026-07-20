@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-type Detail = { heading: string; items: string[] };
+type DetailItem = string | { text: string; href: string };
+type Detail = { heading: string; items: DetailItem[] };
 type Extra = {
   quote?: string;
   body?: string;
@@ -69,12 +70,27 @@ export function ExpandableProfile({
                   {d.heading}
                 </div>
                 <ul className="space-y-2 text-base text-muted-foreground">
-                  {d.items.map((it) => (
-                    <li key={it} className="flex gap-3">
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary/70" />
-                      <span>{it}</span>
-                    </li>
-                  ))}
+                  {d.items.map((it) => {
+                    const text = typeof it === "string" ? it : it.text;
+                    const href = typeof it === "string" ? undefined : it.href;
+                    return (
+                      <li key={text} className="flex gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary/70" />
+                        {href ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary underline underline-offset-2 hover:text-primary/80"
+                          >
+                            {text}
+                          </a>
+                        ) : (
+                          <span>{text}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
