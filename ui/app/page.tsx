@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { PillarCarousel } from "@/components/pillar-carousel";
+import { Card } from "@/components/ui/card";
 import { HomeHeroSlideshow } from "@/components/home-hero-slideshow";
 
 const pillars = [
@@ -102,7 +103,30 @@ export default function Home() {
             View the program →
           </Link>
         </div>
-        <PillarCarousel pillars={pillars} />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {pillars.map((p) => (
+            <Card
+              key={p.title}
+              className="group gap-0 overflow-hidden p-0 transition-colors hover:border-primary/40"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-serif text-xl">{p.title}</h3>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  {p.body}
+                </p>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
     </>
   );
