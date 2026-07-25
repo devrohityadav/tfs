@@ -47,7 +47,7 @@ export default function Home() {
       <section className="relative isolate overflow-hidden">
         <HomeHeroSlideshow />
         <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-end px-6 pb-20 pt-32 hero-content">
-          <h1 className="max-w-3xl font-serif text-6xl leading-[1.05] tracking-tight md:text-8xl">
+          <h1 className="max-w-3xl font-serif text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-8xl">
             Welcome to <span className="italic text-primary">Ecologies Studio</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">

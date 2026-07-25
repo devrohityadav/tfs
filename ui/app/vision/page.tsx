@@ -7,14 +7,14 @@ export default function VisionPage() {
     <div>
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-black">
-          <Image src="/images/vision.webp" alt="" fill className="object-contain md:object-cover" priority />
+          <Image src="/images/vision.webp" alt="" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-40 hero-content">
-          <h1 className="max-w-3xl font-serif text-5xl leading-[1.1] md:text-7xl">
+          <h1 className="max-w-3xl font-serif text-4xl leading-[1.15] sm:text-5xl md:text-7xl">
             We do not inherit the Earth. We learn to belong to it.
           </h1>
-          <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
             Grounded in &lsquo;listening to land&rsquo;, Ecologies Studio guides a shift from
             extraction to deep reciprocity with the ground beneath our feet.
           </p>
