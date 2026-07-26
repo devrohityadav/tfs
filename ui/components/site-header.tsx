@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { MenuIcon, XIcon } from "lucide-react";
+import { ExternalLink, MenuIcon, XIcon } from "lucide-react";
 
 const nav = [
   { href: "/vision", label: "Vision" },
@@ -14,6 +14,11 @@ const nav = [
   { href: "/preparation", label: "Preparation" },
   { href: "/apply", label: "Apply" },
 ];
+
+const EXTERNAL_LINK = {
+  href: "https://poveda-builder-tvlu6gjoirpfgb2s.hostingersite.com/",
+  label: "Trips",
+};
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -87,6 +92,15 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <a
+            href={EXTERNAL_LINK.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            <ExternalLink className="h-4 w-4" />
+            {EXTERNAL_LINK.label}
+          </a>
         </nav>
 
         <button
@@ -112,8 +126,10 @@ export function SiteHeader() {
                   <Link
                     href={n.href}
                     aria-current={active ? "page" : undefined}
-                    className={`block text-base ${
-                      active ? "font-medium text-foreground" : "text-muted-foreground"
+                    className={`block border-l-2 py-1 pl-3 text-base transition-colors ${
+                      active
+                        ? "border-primary font-medium text-primary"
+                        : "border-transparent text-muted-foreground"
                     }`}
                   >
                     {n.label}
@@ -121,6 +137,17 @@ export function SiteHeader() {
                 </li>
               );
             })}
+            <li>
+              <a
+                href={EXTERNAL_LINK.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <ExternalLink className="h-4 w-4" />
+                {EXTERNAL_LINK.label}
+              </a>
+            </li>
           </ul>
         </nav>
       )}
