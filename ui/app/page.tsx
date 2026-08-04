@@ -82,9 +82,10 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
           <p className="font-serif text-2xl leading-relaxed md:text-3xl">
             Ecologies Studio offers an immersive, forest-based learning program that
-            bridges the gap between modern education and indigenous wisdom. This is a
-            gathering place for those ready to go beyond the sustainability discourse and
-            cultivate a reciprocal, regenerative practice in a more-than-human world.
+            bridges the gap between modern education and indigenous wisdom. We co-create
+            through regenerative design, workshops, residencies and artistic and hybrid
+            interventions, that go beyond the sustainability discourse and cultivate a
+            reciprocal, regenerative practice with place in a more-than-human world.
           </p>
           <p className="mt-6 font-serif text-2xl leading-relaxed md:text-3xl">
             Our inaugural journey unfolds across the mountains of Ladakh where the
@@ -95,17 +96,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-24">
+      <section className="py-24">
         <h2 className="text-center font-serif text-3xl tracking-tight md:text-4xl">
           Upcoming Immersions
         </h2>
-        <div className="relative mt-10 aspect-[4719/2059] overflow-hidden rounded-lg">
+        <div className="relative mt-10 aspect-[4719/2059] w-full overflow-hidden">
           <Image
             src="/images/posters/crafting-ecologies.webp"
             alt="Crafting Ecologies"
             fill
-            sizes="(min-width: 1024px) 1024px, 100vw"
-            className="object-contain"
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
       </section>

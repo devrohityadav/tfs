@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ExternalLink, MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -15,11 +15,6 @@ const nav = [
   { href: "/preparation", label: "Preparation" },
   { href: "/apply", label: "Apply" },
 ];
-
-const EXTERNAL_LINK = {
-  href: "https://poveda-builder-tvlu6gjoirpfgb2s.hostingersite.com/",
-  label: "Trips",
-};
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -62,8 +57,8 @@ export function SiteHeader() {
                 : "/images/logo-ecologies-studio-white.webp"
             }
             alt="Ecologies Studio"
-            width={7896}
-            height={1192}
+            width={12510}
+            height={1794}
             priority
             sizes="180px"
             quality={95}
@@ -93,15 +88,6 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <a
-            href={EXTERNAL_LINK.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            <ExternalLink className="h-4 w-4" />
-            {EXTERNAL_LINK.label}
-          </a>
         </nav>
 
         <button
@@ -138,17 +124,6 @@ export function SiteHeader() {
                 </li>
               );
             })}
-            <li>
-              <a
-                href={EXTERNAL_LINK.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                <ExternalLink className="h-4 w-4" />
-                {EXTERNAL_LINK.label}
-              </a>
-            </li>
           </ul>
         </nav>
       )}

@@ -87,7 +87,7 @@ const packing = [
 export default function PreparationPage() {
   return (
     <div>
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate min-h-[634px] md:min-h-[700px] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-black">
           <Image src="/images/preparation/01.webp" alt="" fill className="object-cover md:object-top" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/55" />

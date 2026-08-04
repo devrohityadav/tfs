@@ -23,16 +23,6 @@ export function SiteFooter() {
             <li><Link href="/knowledge" className="hover:text-white">Knowledge Hub</Link></li>
             <li><Link href="/preparation" className="hover:text-white">Preparation</Link></li>
             <li><Link href="/apply" className="hover:text-white">Apply</Link></li>
-            <li>
-              <a
-                href="https://poveda-builder-tvlu6gjoirpfgb2s.hostingersite.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white"
-              >
-                Trips
-              </a>
-            </li>
           </ul>
         </div>
         <div className="text-sm">
