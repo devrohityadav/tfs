@@ -10,7 +10,7 @@ export function HomeHeroSlideshow() {
         priority
         sizes="100vw"
         quality={90}
-        className="object-cover"
+        className="object-cover md:object-top"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
     </div>

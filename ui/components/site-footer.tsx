@@ -60,8 +60,14 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} Sonal Jain. All rights reserved.
+      <div className="border-t border-white/10 px-6 py-5 text-center text-xs text-white/50">
+        <p>
+          Image credits: Kochi Muziris Biennale, Muthok Khongmawloh, Rohit Yadav,
+          Morningstar Khongthaw and Sonal Jain.
+        </p>
+        <p className="mt-2">
+          © {new Date().getFullYear()} Sonal Jain. All rights reserved.
+        </p>
       </div>
     </footer>
   );

@@ -10,7 +10,7 @@ const pillars = [
     body: "Adopt living-system thinking in your practice to design at the service of the regeneration of Earth's systems and communities.",
   },
   {
-    title: "Indigenous Knowledges",
+    title: "Indigenous Wisdom",
     image: "/images/pillars/indigenous-knowledges.webp",
     body: "Deeply rooted in the ancient, localized currents of Khasi wisdom, where the land itself acts as the primary text.",
   },
@@ -38,6 +38,11 @@ const pillars = [
     title: "Bioregionalism",
     image: "/images/pillars/bioregionalism.webp",
     body: "Our learning is anchored in the soil of the bioregion — focused on the natural, alive, and cultural features of a place defined by its pulsing watersheds and ecosystems, rather than the cold, straight lines of man-made borders.",
+  },
+  {
+    title: "Experiential Learning",
+    image: "/images/pillars/experiential-learning.webp",
+    body: "We learn by doing, creating, and participating, rather than just observing.",
   },
 ];
 
@@ -82,10 +87,26 @@ export default function Home() {
             cultivate a reciprocal, regenerative practice in a more-than-human world.
           </p>
           <p className="mt-6 font-serif text-2xl leading-relaxed md:text-3xl">
-            Our inaugural journey unfolds across the ancient, mist-shrouded landscapes of
-            Meghalaya, where the living architecture of the Khasi people offers a physical
-            blueprint for our shared future.
+            Our inaugural journey unfolds across the mountains of Ladakh where the
+            circular resource management, indigenous knowledge and landscape-driven
+            design have sustained an ancient culture and offers a physical blueprint for
+            our shared future.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <h2 className="text-center font-serif text-3xl tracking-tight md:text-4xl">
+          Upcoming Immersions
+        </h2>
+        <div className="relative mt-10 aspect-[4719/2059] overflow-hidden rounded-lg">
+          <Image
+            src="/images/posters/crafting-ecologies.webp"
+            alt="Crafting Ecologies"
+            fill
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="object-contain"
+          />
         </div>
       </section>
 

@@ -23,7 +23,7 @@ const questions = [
   {
     title: "Reciprocity",
     image: "/images/program/04.webp",
-    body: "How can a true loop of reciprocity be forged while learning traditional arts, craft, and building — holding space in a way that empowers local communities and protects beautiful, endangered crafts such as bamboo weaving, broom making, fireside music sessions, and sustainable building techniques?",
+    body: "How can a true loop of reciprocity be forged while learning traditional arts, craft, and building — holding space in a way that empowers local communities and protects beautiful, endangered crafts such as bamboo weaving, broom making, etc.?",
   },
   {
     title: "Deep Listening",
@@ -53,14 +53,14 @@ export default function ProgramPage() {
             Designed for those seeking meaningful connection to the Earth and grounded
             ways of living amid global uncertainty.
           </p>
+          <blockquote className="mt-8 max-w-xl border-l-2 border-primary/60 pl-4 font-serif text-xl italic text-foreground/90">
+            &ldquo;I am because we are.&rdquo;
+          </blockquote>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <blockquote className="mx-auto max-w-xl border-l-2 border-primary/60 pl-4 font-serif text-xl italic text-foreground/90">
-          &ldquo;I am because we are.&rdquo;
-        </blockquote>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {questions.map((q) => (
             <Card
               key={q.title}

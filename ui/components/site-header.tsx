@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink, MenuIcon, XIcon } from "lucide-react";
 
 const nav = [
+  { href: "/", label: "Home" },
   { href: "/vision", label: "Vision" },
   { href: "/program", label: "The Program" },
   { href: "/team", label: "Team" },
