@@ -1,3 +1,12 @@
+export const delveDeeperQuestions = [
+  "How can indigenous worldviews and cosmologies, encountered through oral histories and folk traditions, inspire us to breathe life into new, locally specific, and culturally rooted models within our own disciplines?",
+  "How can we create an ecological symbiosis by living and learning from nature? What can we absorb from the living root structures, the ancient agroforestry, the foraging paths, and the survival rhythms of the teachers who walk beside us?",
+  "By immersing ourselves in the village life of communities that have stood steady for centuries and feeling the pulse of their living systems, how can we draw closer to the heart of deep ecology, (Naess, Capra), regenerative cultures and circular design (Webster, Ellen MacArthur Foundation)?",
+  "How can a true loop of reciprocity be forged while learning traditional arts, craft, and building—holding space in a way that empowers local communities and protects beautiful, endangered crafts? (bamboo weaving, broom making, fireside music sessions, and sustainable building techniques)",
+  "How can the practice of deep listening and quiet self-reflection awaken a sense of aliveness (Weber), helping us communicate with and design for the more-than-human world?",
+  "How do we translate a holistic way of living into life-enhancing, permaculture principles that shape our daily actions?",
+];
+
 export const questions = [
   {
     title: "Indigenous Worldviews",

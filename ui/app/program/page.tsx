@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
-import { questions } from "@/lib/program-questions";
+import { DelveDeeperSection } from "@/components/delve-deeper-section";
+import { questions, delveDeeperQuestions } from "@/lib/program-questions";
 
 export const metadata = { title: "The Program — Ecologies Studio" };
 
@@ -51,6 +52,8 @@ export default function ProgramPage() {
             </Card>
           ))}
         </div>
+
+        <DelveDeeperSection questions={delveDeeperQuestions} />
       </section>
     </div>
   );
