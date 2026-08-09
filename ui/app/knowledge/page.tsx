@@ -110,30 +110,6 @@ const pedagogicalProjects: Entry[] = [
   },
 ];
 
-// TODO: replace `#` once PDFs are supplied.
-const pdfs = [
-  {
-    title: "deSchool Workspace",
-    note: "Curriculum overview & pedagogical toolkit.",
-    href: "#",
-  },
-  {
-    title: "Museums are Closed at Night — Final Report",
-    note: "IFA Museum Fellowship: decolonizing the Assam State Museum archives.",
-    href: "#",
-  },
-  {
-    title: "Living (planet) versus dead (capital)",
-    note: "Reclaiming aliveness and dismantling extractive worldviews.",
-    href: "#",
-  },
-  {
-    title: "The Entropic Forest: Sharing Life, Ecopolitics, and Reciprocity",
-    note: "Northeast India ecopolitics study.",
-    href: "#",
-  },
-];
-
 const bioArchitecture = [
   {
     title: "Defining 'Living Architecture'",
@@ -161,8 +137,7 @@ export default function KnowledgePage() {
           </h1>
           <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
             An intellectual and archival foundation bridging contemporary research with
-            ancient wisdom, under the leadership of Sonal Jain — with bio-architectural
-            studies curated by Morningstar Khongthaw.
+            ancient wisdom.
           </p>
         </div>
       </section>
@@ -189,29 +164,6 @@ export default function KnowledgePage() {
 
       <Section title="Pedagogical Projects">
         <EntryGrid entries={pedagogicalProjects} />
-      </Section>
-
-      <Section title="Pedagogical Tools & Institutional Reports">
-        <div className="grid gap-5 md:grid-cols-2">
-          {pdfs.map((p) => (
-            <Card
-              key={p.title}
-              className="h-full border-border bg-card p-7"
-              aria-disabled
-            >
-              <div className="flex items-start justify-between gap-4">
-                <Badge variant="outline" className="border-primary/40 text-primary">
-                  PDF
-                </Badge>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  Coming soon
-                </span>
-              </div>
-              <h3 className="mt-4 font-serif text-lg leading-tight">{p.title}</h3>
-              <p className="mt-3 text-base text-muted-foreground">{p.note}</p>
-            </Card>
-          ))}
-        </div>
       </Section>
 
       <Section
