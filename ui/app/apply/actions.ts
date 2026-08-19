@@ -8,7 +8,7 @@ export type ApplyState = {
 } | null;
 
 const TO = process.env.APPLY_TO_EMAIL || "hi@ecologiesstudio.com";
-const FROM = process.env.APPLY_FROM_EMAIL || "Forest School <apply@ecologiesstudio.com>";
+const FROM = process.env.APPLY_FROM_EMAIL || "Ecologies Studio <apply@ecologiesstudio.com>";
 
 export async function submitApplication(
   _prev: ApplyState,
@@ -39,7 +39,7 @@ export async function submitApplication(
   const resend = new Resend(apiKey);
 
   const html = `
-    <h2>New Forest School application</h2>
+    <h2>New Ecologies Studio application</h2>
     <p><strong>Name:</strong> ${escape(name)}</p>
     <p><strong>Email:</strong> ${escape(email)}</p>
     <p><strong>Discipline:</strong> ${escape(discipline || "—")}</p>
@@ -58,7 +58,7 @@ export async function submitApplication(
       from: FROM,
       to: TO,
       replyTo: email,
-      subject: `Forest School application — ${name}`,
+      subject: `Ecologies Studio application — ${name}`,
       html,
     });
     if (error) return { ok: false, message: error.message || "Failed to send." };
