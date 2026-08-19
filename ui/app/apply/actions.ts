@@ -7,8 +7,8 @@ export type ApplyState = {
   message: string;
 } | null;
 
-const TO = process.env.APPLY_TO_EMAIL || "dev.yadav.rohit@gmail.com";
-const FROM = process.env.APPLY_FROM_EMAIL || "Forest School <onboarding@resend.dev>";
+const TO = process.env.APPLY_TO_EMAIL || "hi@ecologiesstudio.com";
+const FROM = process.env.APPLY_FROM_EMAIL || "Forest School <apply@ecologiesstudio.com>";
 
 export async function submitApplication(
   _prev: ApplyState,
