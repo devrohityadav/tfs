@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useId } from "react";
+import { useActionState, useId, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -38,6 +38,18 @@ export function ApplyForm() {
   const intentId = useId();
   const cocreateId = useId();
   const reflectionsId = useId();
+  const [checkedCommitments, setCheckedCommitments] = useState<Set<string>>(
+    () => new Set(),
+  );
+
+  function toggleCommitment(c: string, checked: boolean) {
+    setCheckedCommitments((prev) => {
+      const next = new Set(prev);
+      if (checked) next.add(c);
+      else next.delete(c);
+      return next;
+    });
+  }
 
   return (
     <form action={formAction} className="space-y-10">
@@ -86,7 +98,7 @@ export function ApplyForm() {
       <Field
         id={cocreateId}
         label="Co-Creation"
-        hint="How do you see yourself co-learning and co-creating in the Forest School ecosystem?"
+        hint="How do you see yourself co-learning and co-creating in the Ecologies Studio ecosystem?"
       >
         <Textarea id={cocreateId} name="cocreate" rows={5} required />
       </Field>
@@ -110,8 +122,10 @@ export function ApplyForm() {
               <li key={c} className="flex items-center gap-3 text-sm leading-none">
                 <Checkbox
                   id={id}
-                  name="commitments"
-                  value={c}
+                  checked={checkedCommitments.has(c)}
+                  onCheckedChange={(checked) =>
+                    toggleCommitment(c, checked === true)
+                  }
                 />
                 <Label htmlFor={id} className="cursor-pointer font-normal">
                   {c}
@@ -120,6 +134,9 @@ export function ApplyForm() {
             );
           })}
         </ul>
+        {[...checkedCommitments].map((c) => (
+          <input key={c} type="hidden" name="commitments" value={c} />
+        ))}
       </Card>
 
       <SubmitButton />
